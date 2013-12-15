@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context=".ListarGastos">
+
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <Button android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:id="@+id/UpdateList"
+                android:layout_margin="2dip"
+                android:text="Atualizar"
+                android:onClick="onClick"/>
+
+            <ListView android:id="@+id/SMSList"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_margin="2dip" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>
