@@ -5,6 +5,8 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -35,8 +37,6 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-         contentResolver = getContentResolver();
-
         setContentView(R.layout.activity_main);
 
         // Set up the action bar to show a dropdown list.
@@ -57,6 +57,13 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
                                 getString(R.string.title_section3),
                         }),
                 this);
+
+        contentResolver = getContentResolver();
+        Cursor cursor = contentResolver.query( Uri.parse("content://sms/inbox"), null,"ADDRESS == 27181 " , null, null);
+
+        ListarGastos listarGastos = new ListarGastos();
+        listarGastos.CarregarSms(cursor);
+
     }
 
     @Override
@@ -101,7 +108,7 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
         // When the given dropdown item is selected, show its contents in the
         // container view.
         getFragmentManager().beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1,contentResolver))
+                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
         return true;
     }
@@ -115,13 +122,12 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-        private static ContentResolver _contentResolver;
+
         /**
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber, ContentResolver contentResolver) {
-            _contentResolver = contentResolver;
+        public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
@@ -139,9 +145,7 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
             //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             //textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
 
-            ListarGastos listarGastos = new ListarGastos(_contentResolver);
-
-            ArrayList<String> smsList = listarGastos.RecuperarGastosAgrupadosPorPeriodicade(Periodicidade.Dia);
+            ArrayList<String> smsList = ListarGastos.RecuperarGastosAgrupadosPorPeriodicade(Periodicidade.values()[getArguments().getInt(ARG_SECTION_NUMBER)-1]);
 
             ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
             smsListView.setAdapter( new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, smsList) );

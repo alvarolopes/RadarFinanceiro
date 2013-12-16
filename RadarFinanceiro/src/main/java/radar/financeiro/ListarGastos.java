@@ -12,25 +12,14 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.database.Cursor;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
+import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 
 import android.view.View.OnClickListener;
 import android.widget.AdapterView.OnItemClickListener;
@@ -47,28 +36,114 @@ public class ListarGastos
 {
 
 
-    ArrayList<String> smsList = new ArrayList<String>();
+    static ArrayList<String> smsList = new ArrayList<String>();
+    static ArrayList<Debito> debitos = new ArrayList<Debito>();
     ContentResolver contentResolver;
 
-    public ListarGastos(ContentResolver contentResolver) {
-        this.contentResolver = contentResolver;
+    public ListarGastos() {
+
     }
 
-    public ArrayList<String> RecuperarGastosAgrupadosPorPeriodicade( Periodicidade periodicidade )
+    public static ArrayList<String> RecuperarGastosAgrupadosPorPeriodicade( Periodicidade periodicidade )
     {
-        Cursor cursor = contentResolver.query( Uri.parse("content://sms/inbox"), null,"ADDRESS == 27181 " , null, null);
+        Iterator<Debito> iter = debitos.iterator();
+        Date ultimoDia = null;
+        Double valorAcumulado = 0.0;
+        smsList.clear();
+        while(iter.hasNext()){
+            Debito debito = iter.next();
 
 
-        //smsList.add("teste");
-        CarregarSms(cursor);
+            if (periodicidade == Periodicidade.Dia)
+            {
+
+                if (ultimoDia == null)
+                    ultimoDia = debito.getData();
+
+                if (ultimoDia.getDay() == debito.getData().getDay())
+                {
+                    valorAcumulado += debito.getValor();
+                }
+                else
+                {
+                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
+                    String reportDate = dateFormat.format(ultimoDia);
+
+                    DecimalFormat df=new DecimalFormat("0.00");
+                    String reportValue = df.format(valorAcumulado);
+
+                    smsList.add( reportDate + " - " + reportValue);
+
+                    valorAcumulado = debito.getValor();
+                    ultimoDia = debito.getData();
+                }
+            }
+
+            if (periodicidade == Periodicidade.Semana)
+            {
+
+                if (ultimoDia == null)
+                    ultimoDia = debito.getData();
+
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(ultimoDia);
+                int ultimaSemana = cal.get(Calendar.WEEK_OF_YEAR);
+
+                cal.setTime(debito.getData());
+                int estaSemana = cal.get(Calendar.WEEK_OF_YEAR);
+
+                if (ultimaSemana == estaSemana)
+                {
+                    valorAcumulado += debito.getValor();
+                }
+                else
+                {
+                    DateFormat dateFormat = new SimpleDateFormat("ww - MM/yy");
+                    String reportDate = dateFormat.format(ultimoDia);
+
+                    DecimalFormat df=new DecimalFormat("0.00");
+                    String reportValue = df.format(valorAcumulado);
+
+                    smsList.add( reportDate + " - " + reportValue);
+
+                    valorAcumulado = debito.getValor();
+                    ultimoDia = debito.getData();
+                }
+            }
+
+            if (periodicidade == Periodicidade.Mes)
+            {
+
+                if (ultimoDia == null)
+                    ultimoDia = debito.getData();
+
+                if (ultimoDia.getMonth() == debito.getData().getMonth())
+                {
+                    valorAcumulado += debito.getValor();
+                }
+                else
+                {
+                    DateFormat dateFormat = new SimpleDateFormat("MM/yy");
+                    String reportDate = dateFormat.format(ultimoDia);
+
+                    DecimalFormat df=new DecimalFormat("0.00");
+                    String reportValue = df.format(valorAcumulado);
+
+                    smsList.add( reportDate + " - " + reportValue);
+
+                    valorAcumulado = debito.getValor();
+                    ultimoDia = debito.getData();
+                }
+            }
+
+
+        }
 
         return  smsList;
     }
 
     public void CarregarSms(Cursor cursor)
     {
-
-
         int indexBody = cursor.getColumnIndex( SmsReceiver.BODY );
 
         if ( indexBody < 0 || !cursor.moveToFirst() ) return;
@@ -99,10 +174,8 @@ public class ListarGastos
                 }
             }
 
-
-            smsList.add(debito.getData() + " - "+ debito.getValor().toString());
-            //Salvar no banco de dados
-
+            if (debito!= null)
+                debitos.add(debito);
          }
         while( cursor.moveToNext() );
     }
@@ -121,22 +194,4 @@ public class ListarGastos
 
         return debito;
     }
-
-
 }
-
-
-
-/*if (!data.equals(ultimadata))
-        {
-        DecimalFormat df=new DecimalFormat("0.00");
-        String formate = df.format(valorAcumulado);
-
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String reportDate = dateFormat.format(debito.getData());
-
-        smsList.add( reportDate + " - " + formate);
-
-        valorAcumulado = 0.0;
-        ultimadata = data;
-        }*/
