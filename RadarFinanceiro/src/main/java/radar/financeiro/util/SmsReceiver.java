@@ -10,8 +10,6 @@ import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
 
-import radar.financeiro.StringCryptor;
-
 public class SmsReceiver extends BroadcastReceiver 
 {
 	// All available column names in SMS table
