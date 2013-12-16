@@ -1,4 +1,4 @@
-package radar.financeiro;
+package radar.financeiro.Model;
 
 import java.util.Date;
 

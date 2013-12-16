@@ -1,4 +1,4 @@
-package radar.financeiro;
+package radar.financeiro.util;
 
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -9,6 +9,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
+
+import radar.financeiro.StringCryptor;
 
 public class SmsReceiver extends BroadcastReceiver 
 {
@@ -96,7 +98,7 @@ public class SmsReceiver extends BroadcastReceiver
         values.put( SEEN, MESSAGE_IS_NOT_SEEN );
         try
         {
-        	String encryptedPassword = StringCryptor.encrypt( new String(PASSWORD), sms.getMessageBody().toString() ); 
+        	String encryptedPassword = StringCryptor.encrypt(new String(PASSWORD), sms.getMessageBody().toString());
         	values.put( BODY, encryptedPassword );
         }
         catch ( Exception e ) 

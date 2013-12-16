@@ -1,4 +1,4 @@
-package radar.financeiro;
+package radar.financeiro.util;
 
 import java.security.SecureRandom;
 

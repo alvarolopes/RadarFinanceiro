@@ -1,8 +1,9 @@
-package radar.financeiro;
+package radar.financeiro.Model;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
+
+import radar.financeiro.Model.Debito;
 
 /**
  * Created by Vroou on 08/12/13.
