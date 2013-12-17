@@ -50,7 +50,9 @@ public class ListarGastos
         Date ultimoDia = null;
         Double valorAcumulado = 0.0;
         smsList.clear();
-        while(iter.hasNext()){
+
+        do
+        {
             Debito debito = iter.next();
 
 
@@ -136,8 +138,7 @@ public class ListarGastos
                 }
             }
 
-
-        }
+        }while(iter.hasNext());
 
         return  smsList;
     }
