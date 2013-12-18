@@ -44,6 +44,41 @@ public class ListarGastos
 
     }
 
+
+    public static ArrayList<String> RecuperarGastosAgrupadosPorPeriodo( Date dataInicio, Date dataFim )
+    {
+        Iterator<Debito> iter = debitos.iterator();
+        Date ultimoDia = null;
+        Double valorAcumulado = 0.0;
+        smsList.clear();
+
+        do
+        {
+            Debito debito = iter.next();
+
+            if (debito.getData().after(dataInicio) && debito.getData().before(dataFim))
+            {
+                    valorAcumulado += debito.getValor();
+            }
+            else
+            {
+                DateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
+                String reportDate = dateFormat.format(ultimoDia);
+
+                DecimalFormat df=new DecimalFormat("0.00");
+                String reportValue = df.format(valorAcumulado);
+
+                smsList.add( reportDate + " - " + reportValue);
+
+                valorAcumulado = debito.getValor();
+                ultimoDia = debito.getData();
+            }
+
+        }while(iter.hasNext());
+
+        return smsList;
+    }
+
     public static ArrayList<String> RecuperarGastosAgrupadosPorPeriodicade( Periodicidade periodicidade )
     {
         Iterator<Debito> iter = debitos.iterator();

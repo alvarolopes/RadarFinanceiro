@@ -8,6 +8,7 @@
     <string name="title_section1">Dia</string>
     <string name="title_section2">Semana</string>
     <string name="title_section3">Mes</string>
+    <string name="title_section4">Periodo</string>
     <string name="action_settings">Settings</string>
 
 </resources>

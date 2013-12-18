@@ -1,3 +1,3 @@
 package radar.financeiro.Model;
 
-public enum Periodicidade { Dia, Semana, Mes }
+public enum Periodicidade { Dia, Semana, Mes, Periodo }

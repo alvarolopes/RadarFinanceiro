@@ -2,6 +2,7 @@ package radar.financeiro;
 
 import android.app.Activity;
 import android.app.ActionBar;
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -20,8 +21,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import radar.financeiro.Model.Periodicidade;
+import radar.financeiro.util.TimePickerFragment;
 
 public class MainActivity extends Activity implements ActionBar.OnNavigationListener {
 
@@ -55,6 +58,7 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
                                 getString(R.string.title_section1),
                                 getString(R.string.title_section2),
                                 getString(R.string.title_section3),
+                                getString(R.string.title_section4),
                         }),
                 this);
 
@@ -145,12 +149,29 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
             //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             //textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
 
-            ArrayList<String> smsList = ListarGastos.RecuperarGastosAgrupadosPorPeriodicade(Periodicidade.values()[getArguments().getInt(ARG_SECTION_NUMBER)-1]);
+            Periodicidade periodicidade = Periodicidade.values()[getArguments().getInt(ARG_SECTION_NUMBER)-1];
 
-            ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
-            smsListView.setAdapter( new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, smsList) );
-            //smsListView.setOnItemClickListener( this );
+            if (Periodicidade.Periodo == periodicidade )
+            {
+                //ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
+                //DialogFragment newFragment = new TimePickerFragment();
+                //newFragment.show(getSupportFragmentManager(), "timePicker");
+                Date dataInicio = new Date(2013,9,1);
+                Date dataFim = new Date(2013,10,15);
 
+                ArrayList<String> smsList = ListarGastos.RecuperarGastosAgrupadosPorPeriodo(dataInicio, dataFim);
+
+                ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
+                smsListView.setAdapter( new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, smsList) );
+            }
+            else
+            {
+                ArrayList<String> smsList = ListarGastos.RecuperarGastosAgrupadosPorPeriodicade(periodicidade);
+
+                ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
+                smsListView.setAdapter( new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, smsList) );
+                //smsListView.setOnItemClickListener( this );
+            }
 
             return rootView;
         }
