@@ -8,7 +8,7 @@ import radar.financeiro.Model.Debito;
 /**
  * Created by Vroou on 08/12/13.
  */
-public class GastoDiario {
+public class DebitoAcumulado {
 
     public ArrayList<Debito> gastosNoDia;
 
