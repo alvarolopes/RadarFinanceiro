@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,12 +16,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+import radar.financeiro.Model.Debito;
 import radar.financeiro.Model.DebitoAcumulado;
 import radar.financeiro.Model.Periodicidade;
 
@@ -46,6 +49,7 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
         final ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+
 
         // Set up the dropdown list navigation in the action bar.
         actionBar.setListNavigationCallbacks(
@@ -149,19 +153,12 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-
-
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            //textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
 
             Periodicidade periodicidade = Periodicidade.values()[getArguments().getInt(ARG_SECTION_NUMBER)-1];
 
             if (Periodicidade.Periodo == periodicidade )
             {
-                //ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
-                //DialogFragment newFragment = new TimePickerFragment();
-                //newFragment.show(getSupportFragmentManager(), "timePicker");
                 Date dataInicio = new Date(2013,9,1);
                 Date dataFim = new Date(2013,10,15);
 
@@ -175,43 +172,23 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
                 List<DebitoAcumulado> debitos =  ListarGastos.RecuperarGastosAgrupadosPorPeriodicade(periodicidade);
                 ArrayAdapter ad = new CustomAdapter_debitos(rootView.getContext(), R.layout.list_item, debitos);
                 ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
-
                 smsListView.setAdapter(ad);
                 smsListView.setOnItemClickListener(new DrawerItemClickListener());
-
-
-
-        //        ArrayList<String> smsList = new ArrayList<String>();
-
-      //          Iterator<DebitoAcumulado> iter2 = ListarGastos.RecuperarGastosAgrupadosPorPeriodicade(periodicidade).iterator();
-    //            while(iter2.hasNext())
-  //              {
-//                    DebitoAcumulado debitoAcumulado1 = iter2.next();
-
-                //    smsList.add(debitoAcumulado1.getDataView()+" - "+ debitoAcumulado1.getValorView());
-               // }
-
-
-              //  ArrayAdapter<String> lista = new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, smsList);
-
-               // ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
-               // smsListView.setAdapter( lista );
-               // smsListView.setOnItemClickListener(new DrawerItemClickListener());
             }
 
             return rootView;
         }
 
-
         private class DrawerItemClickListener implements ListView.OnItemClickListener {
             @Override
             public void onItemClick(AdapterView parent, View view, int position, long id) {
-                selectItem(position);
+
+                ListView listView = (ListView) view.getParent();
+                ArrayAdapter ad = (ArrayAdapter)listView.getAdapter();
+                Intent i=new Intent(view.getContext(), Debitos_Detalhes.class);
+                i.putExtra("debitoAcumulado", (DebitoAcumulado) ad.getItem(position));
+                startActivity(i);
             }
-        }
-
-        private void selectItem(int position) {
-
         }
 
 

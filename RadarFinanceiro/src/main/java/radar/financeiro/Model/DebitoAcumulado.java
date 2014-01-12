@@ -1,5 +1,6 @@
 package radar.financeiro.Model;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -11,7 +12,7 @@ import radar.financeiro.Model.Debito;
 /**
  * Created by Vroou on 08/12/13.
  */
-public class DebitoAcumulado {
+public class DebitoAcumulado implements Serializable {
 
     public ArrayList<Debito> desbitosNoPerido;
     public Periodicidade periodicidade;

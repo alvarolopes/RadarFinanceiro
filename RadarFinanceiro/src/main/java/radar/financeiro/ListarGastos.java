@@ -94,7 +94,6 @@ public class ListarGastos
         while(iter.hasNext())
         {
             Debito debito = iter.next();
-            debitoAcumulado.desbitosNoPerido.add(debito);
 
             if (debitoAcumulado.getData() == null)
                 debitoAcumulado.setData(debito.getData());
@@ -131,6 +130,8 @@ public class ListarGastos
 
                 debitoAcumulado = new DebitoAcumulado(debito.getValor(),periodicidade,debito.getData());
             }
+
+            debitoAcumulado.desbitosNoPerido.add(debito);
         }
 
         debitosAcumulados.add( debitoAcumulado);

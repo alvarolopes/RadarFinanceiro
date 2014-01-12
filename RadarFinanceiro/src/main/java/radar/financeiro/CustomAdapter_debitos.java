@@ -41,7 +41,6 @@ public class CustomAdapter_debitos extends ArrayAdapter<DebitoAcumulado>
         TextView data = (TextView) convertView.findViewById(R.id.txtdata);
         TextView valor = (TextView) convertView.findViewById(R.id.txtvalor);
 
-
         //fill the view objects according values from person object
         data.setText(debitoAcumulado.getDataView());
         valor.setText(debitoAcumulado.getValorView());

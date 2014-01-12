@@ -18,9 +18,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="MainActivity"
+            android:name="radar.financeiro.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +36,10 @@
             </intent-filter>
         </receiver>
 
-
+        <activity
+            android:name="radar.financeiro.Debitos_Detalhes"
+            android:label="@string/title_activity_debitos__detalhes" >
+        </activity>
     </application>
 
 </manifest>
