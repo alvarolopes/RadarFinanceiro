@@ -2,29 +2,28 @@ package radar.financeiro;
 
 import android.app.Activity;
 import android.app.ActionBar;
-import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
+import radar.financeiro.Model.DebitoAcumulado;
 import radar.financeiro.Model.Periodicidade;
-import radar.financeiro.util.TimePickerFragment;
+
 
 public class MainActivity extends Activity implements ActionBar.OnNavigationListener {
 
@@ -35,6 +34,7 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
      */
     private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
     private ContentResolver contentResolver;
+    private ListarGastos listarGastos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +65,12 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
         contentResolver = getContentResolver();
         Cursor cursor = contentResolver.query( Uri.parse("content://sms/inbox"), null,"ADDRESS == 27181 " , null, null);
 
-        ListarGastos listarGastos = new ListarGastos();
-        listarGastos.CarregarSms(cursor);
+
+        if (listarGastos == null)
+        {
+            listarGastos = new ListarGastos();
+            listarGastos.LerSms(cursor);
+        }
 
     }
 
@@ -145,6 +149,8 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
+
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             //TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             //textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
@@ -166,15 +172,49 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
             }
             else
             {
-                ArrayList<String> smsList = ListarGastos.RecuperarGastosAgrupadosPorPeriodicade(periodicidade);
-
+                List<DebitoAcumulado> debitos =  ListarGastos.RecuperarGastosAgrupadosPorPeriodicade(periodicidade);
+                ArrayAdapter ad = new CustomAdapter_debitos(rootView.getContext(), R.layout.list_item, debitos);
                 ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
-                smsListView.setAdapter( new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, smsList) );
-                //smsListView.setOnItemClickListener( this );
+
+                smsListView.setAdapter(ad);
+                smsListView.setOnItemClickListener(new DrawerItemClickListener());
+
+
+
+        //        ArrayList<String> smsList = new ArrayList<String>();
+
+      //          Iterator<DebitoAcumulado> iter2 = ListarGastos.RecuperarGastosAgrupadosPorPeriodicade(periodicidade).iterator();
+    //            while(iter2.hasNext())
+  //              {
+//                    DebitoAcumulado debitoAcumulado1 = iter2.next();
+
+                //    smsList.add(debitoAcumulado1.getDataView()+" - "+ debitoAcumulado1.getValorView());
+               // }
+
+
+              //  ArrayAdapter<String> lista = new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, smsList);
+
+               // ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
+               // smsListView.setAdapter( lista );
+               // smsListView.setOnItemClickListener(new DrawerItemClickListener());
             }
 
             return rootView;
         }
+
+
+        private class DrawerItemClickListener implements ListView.OnItemClickListener {
+            @Override
+            public void onItemClick(AdapterView parent, View view, int position, long id) {
+                selectItem(position);
+            }
+        }
+
+        private void selectItem(int position) {
+
+        }
+
+
     }
 
 }

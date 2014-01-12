@@ -1,6 +1,7 @@
 package radar.financeiro;
 
 import radar.financeiro.Model.Debito;
+import radar.financeiro.Model.DebitoAcumulado;
 import radar.financeiro.Model.Periodicidade;
 import radar.financeiro.util.SmsReceiver;
 import radar.financeiro.util.StringCryptor;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.List;
 
 import android.view.View.OnClickListener;
 import android.widget.AdapterView.OnItemClickListener;
@@ -38,10 +40,12 @@ public class ListarGastos
 
     static ArrayList<String> smsList = new ArrayList<String>();
     static ArrayList<Debito> debitos = new ArrayList<Debito>();
+    static List<DebitoAcumulado> debitosAcumulados = new ArrayList<DebitoAcumulado>();
     ContentResolver contentResolver;
 
     public ListarGastos() {
-
+        smsList.clear();
+        debitos.clear();
     }
 
 
@@ -79,106 +83,62 @@ public class ListarGastos
         return smsList;
     }
 
-    public static ArrayList<String> RecuperarGastosAgrupadosPorPeriodicade( Periodicidade periodicidade )
+    public static List<DebitoAcumulado> RecuperarGastosAgrupadosPorPeriodicade( Periodicidade periodicidade )
     {
         Iterator<Debito> iter = debitos.iterator();
-        Date ultimoDia = null;
-        Double valorAcumulado = 0.0;
+        DebitoAcumulado debitoAcumulado = new DebitoAcumulado(0.0,periodicidade,null);
         smsList.clear();
+        debitosAcumulados.clear();
+        int dia = 0 , diaAtual = 0;
 
-        do
+        while(iter.hasNext())
         {
             Debito debito = iter.next();
+            debitoAcumulado.desbitosNoPerido.add(debito);
 
+            if (debitoAcumulado.getData() == null)
+                debitoAcumulado.setData(debito.getData());
 
             if (periodicidade == Periodicidade.Dia)
             {
-
-                if (ultimoDia == null)
-                    ultimoDia = debito.getData();
-
-                if (ultimoDia.getDay() == debito.getData().getDay())
-                {
-                    valorAcumulado += debito.getValor();
-                }
-                else
-                {
-                    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
-                    String reportDate = dateFormat.format(ultimoDia);
-
-                    DecimalFormat df=new DecimalFormat("0.00");
-                    String reportValue = df.format(valorAcumulado);
-
-                    smsList.add( reportDate + " - " + reportValue);
-
-                    valorAcumulado = debito.getValor();
-                    ultimoDia = debito.getData();
-                }
+                dia = debitoAcumulado.getData().getDay();
+                diaAtual = debito.getData().getDay();
             }
 
-            if (periodicidade == Periodicidade.Semana)
+            if (periodicidade == periodicidade.Semana)
             {
-
-                if (ultimoDia == null)
-                    ultimoDia = debito.getData();
-
                 Calendar cal = Calendar.getInstance();
-                cal.setTime(ultimoDia);
-                int ultimaSemana = cal.get(Calendar.WEEK_OF_YEAR);
+                cal.setTime(debitoAcumulado.getData());
+                dia = cal.get(Calendar.WEEK_OF_YEAR);
 
                 cal.setTime(debito.getData());
-                int estaSemana = cal.get(Calendar.WEEK_OF_YEAR);
-
-                if (ultimaSemana == estaSemana)
-                {
-                    valorAcumulado += debito.getValor();
-                }
-                else
-                {
-                    DateFormat dateFormat = new SimpleDateFormat("ww - MM/yy");
-                    String reportDate = dateFormat.format(ultimoDia);
-
-                    DecimalFormat df=new DecimalFormat("0.00");
-                    String reportValue = df.format(valorAcumulado);
-
-                    smsList.add( reportDate + " - " + reportValue);
-
-                    valorAcumulado = debito.getValor();
-                    ultimoDia = debito.getData();
-                }
+                diaAtual = cal.get(Calendar.WEEK_OF_YEAR);
             }
 
-            if (periodicidade == Periodicidade.Mes)
+            if (periodicidade == periodicidade.Mes)
             {
-
-                if (ultimoDia == null)
-                    ultimoDia = debito.getData();
-
-                if (ultimoDia.getMonth() == debito.getData().getMonth())
-                {
-                    valorAcumulado += debito.getValor();
-                }
-                else
-                {
-                    DateFormat dateFormat = new SimpleDateFormat("MM/yy");
-                    String reportDate = dateFormat.format(ultimoDia);
-
-                    DecimalFormat df=new DecimalFormat("0.00");
-                    String reportValue = df.format(valorAcumulado);
-
-                    smsList.add( reportDate + " - " + reportValue);
-
-                    valorAcumulado = debito.getValor();
-                    ultimoDia = debito.getData();
-                }
+                dia = debitoAcumulado.getData().getMonth();
+                diaAtual = debito.getData().getMonth();
             }
 
-        }while(iter.hasNext());
+            if (dia == diaAtual)
+            {
+                debitoAcumulado.incValor(debito.getValor());
+            }
+            else
+            {
+                debitosAcumulados.add( debitoAcumulado);
 
-        return  smsList;
+                debitoAcumulado = new DebitoAcumulado(debito.getValor(),periodicidade,debito.getData());
+            }
+        }
+
+        debitosAcumulados.add( debitoAcumulado);
+
+        return  debitosAcumulados;
     }
 
-    public void CarregarSms(Cursor cursor)
+    public void LerSms(Cursor cursor)
     {
         int indexBody = cursor.getColumnIndex( SmsReceiver.BODY );
 
@@ -196,7 +156,7 @@ public class ListarGastos
             {
                 data = msg.substring(msg.indexOf(" em ")+4,msg.indexOf(" as "));
                 valorString = msg.substring(msg.indexOf("R$"),msg.indexOf("aprovada"));
-                debito = RecuperarRegistroDeDebito(data, valorString);
+                debito = new Debito(data, valorString);
                 debito.setCodigo(msg.hashCode());
             }
             else
@@ -205,7 +165,7 @@ public class ListarGastos
                 {
                     data = msg.substring(msg.indexOf(" efetuado em ")+13,msg.indexOf(" as "));
                     valorString = msg.substring(msg.indexOf("R$"),msg.length());
-                    debito = RecuperarRegistroDeDebito(data, valorString);
+                    debito = new Debito(data, valorString);
                     debito.setCodigo(msg.hashCode());
                 }
             }
@@ -214,20 +174,5 @@ public class ListarGastos
                 debitos.add(debito);
          }
         while( cursor.moveToNext() );
-    }
-
-    private Debito RecuperarRegistroDeDebito(String data, String valor)
-    {
-        Debito debito = new Debito();
-        SimpleDateFormat  format = new SimpleDateFormat("dd/MM/yy");
-        try {
-            Date date = format.parse(data);
-            debito.setData(date);
-        } catch (Exception e) {
-
-        }
-        debito.setValor(Double.parseDouble(valor.substring(3).trim().replace(",", ".")));
-
-        return debito;
     }
 }
