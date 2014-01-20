@@ -1,7 +1,6 @@
 package radar.financeiro;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -46,7 +44,7 @@ public class Debitos_Detalhes extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
+
         // Inflate the menu; this adds items to the action bar if it is present.
 
         return true;
@@ -70,24 +68,25 @@ public class Debitos_Detalhes extends Activity {
     public static class PlaceholderFragment extends Fragment {
 
         private DebitoAcumulado debitoAcumulado;
+
         public PlaceholderFragment(DebitoAcumulado _debitoAcumulado) {
             debitoAcumulado = _debitoAcumulado;
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
+                                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_debitos__detalhes, container, false);
 
-            TextView data =  (TextView) rootView.findViewById(R.id.txtdatadetalhada);
-            TextView valor =  (TextView) rootView.findViewById(R.id.txtvalortotal);
+            TextView data = (TextView) rootView.findViewById(R.id.txtdatadetalhada);
+            TextView valor = (TextView) rootView.findViewById(R.id.txtvalortotal);
 
             data.setText(debitoAcumulado.getDataView());
             valor.setText(debitoAcumulado.getValorView());
 
 
-            List<Debito> debitos =  debitoAcumulado.desbitosNoPerido;
-            ArrayAdapter ad = new CustomAdapter_debitosDetalhados(rootView.getContext(), R.layout.list_item, debitos);
+            List<Debito> debitos = debitoAcumulado.desbitosNoPerido;
+            ArrayAdapter ad = new CustomAdapter_debitosDetalhados(rootView.getContext(), R.layout.list_item_detalhe, debitos);
             ListView smsListView = (ListView) rootView.findViewById(R.id.listDebitos);
 
             smsListView.setAdapter(ad);

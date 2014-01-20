@@ -1,16 +1,17 @@
 package radar.financeiro;
 
-import java.util.List;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import java.util.List;
+
 import radar.financeiro.Model.DebitoAcumulado;
 
-public class CustomAdapter_debitos extends ArrayAdapter<DebitoAcumulado>
-{
+public class CustomAdapter_debitos extends ArrayAdapter<DebitoAcumulado> {
 
     /*
      * Used to instantiate layout XML file into its corresponding View objects

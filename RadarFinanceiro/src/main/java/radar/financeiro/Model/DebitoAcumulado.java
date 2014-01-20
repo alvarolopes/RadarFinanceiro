@@ -7,8 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import radar.financeiro.Model.Debito;
-
 /**
  * Created by Vroou on 08/12/13.
  */
@@ -30,7 +28,7 @@ public class DebitoAcumulado implements Serializable {
     public String getDataView() {
 
         DateFormat dateFormat;
-        switch (periodicidade.ordinal()){
+        switch (periodicidade.ordinal()) {
             case 0:
                 dateFormat = new SimpleDateFormat("dd/MM/yy");
                 break;
@@ -45,7 +43,8 @@ public class DebitoAcumulado implements Serializable {
                 break;
             default:
                 dateFormat = new SimpleDateFormat("dd/MM/yy");
-        };
+        }
+        ;
 
         String reportDate = dateFormat.format(data);
 
@@ -53,7 +52,7 @@ public class DebitoAcumulado implements Serializable {
     }
 
     public String getValorView() {
-        DecimalFormat df=new DecimalFormat("R$ 0.00");
+        DecimalFormat df = new DecimalFormat("R$ 0.00");
         String reportValue = df.format(valor);
 
         return reportValue;

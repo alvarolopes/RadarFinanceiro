@@ -10,10 +10,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import radar.financeiro.Model.Debito;
-import radar.financeiro.Model.DebitoAcumulado;
 
-public class CustomAdapter_debitosDetalhados extends ArrayAdapter<Debito>
-{
+public class CustomAdapter_debitosDetalhados extends ArrayAdapter<Debito> {
 
     /*
      * Used to instantiate layout XML file into its corresponding View objects
@@ -43,10 +41,12 @@ public class CustomAdapter_debitosDetalhados extends ArrayAdapter<Debito>
         //get all object from view
         TextView data = (TextView) convertView.findViewById(R.id.txtdata);
         TextView valor = (TextView) convertView.findViewById(R.id.txtvalor);
+        TextView estabelecimento = (TextView) convertView.findViewById(R.id.txtestabelecimento);
 
         //fill the view objects according values from person object
-        data.setText(debito.getDataView());
+        data.setText(debito.getHoraView());
         valor.setText(debito.getValorView());
+        estabelecimento.setText(debito.getEstabelecimento());
 
         return convertView;
     }

@@ -1,47 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
-    <!-- layout onde fica a imagem -->
+<?xml version="1.0" encoding="utf-8"?><!-- layout onde fica a imagem -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="fill_parent"
-android:layout_height="55dip"
-android:paddingTop="0dip"
-android:paddingBottom="0dip"
-android:orientation="horizontal" >
+    android:layout_width="fill_parent"
+    android:layout_height="55dip"
+    android:paddingTop="0dip"
+    android:paddingBottom="0dip"
+    android:orientation="horizontal">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:layout_weight="1"
-    android:gravity="center_vertical"
-    android:orientation="vertical" >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_weight="0"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtdata"
+        <TextView
+            android:id="@+id/txtdata"
+            android:text="11/12/13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="16sp"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#D8000000"
-        android:textSize="16sp"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:layout_weight="2"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-        />
-</LinearLayout>
-<!-- layout onde fica o radio group -->
+        <TextView
+            android:id="@+id/txtestabelecimento"
+            android:text="ahiuhaiuhaiua"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#D8000000"
+            android:textSize="12sp"
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="110dip"
-    android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    android:orientation="horizontal" >
+            />
+    </LinearLayout>
+    <!-- layout onde fica o radio group -->
 
-    <TextView
-        android:id="@+id/txtvalor"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#D8000000"
-        android:textSize="16sp"
-        />
-</LinearLayout>
-<!-- layout onde fica o checkbox -->
+        <TextView
+            android:id="@+id/txtvalor"
+            android:text="R$ 900,00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:textColor="#D8000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <!-- layout onde fica o checkbox -->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/llCatetoria"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_width="5dip"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
 
 </LinearLayout>

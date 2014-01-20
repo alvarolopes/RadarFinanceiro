@@ -5,8 +5,8 @@
     tools:context="radar.financeiro.MainActivity$PlaceholderFragment">
 
 
-
-    <ListView android:id="@+id/SMSList"
+    <ListView
+        android:id="@+id/SMSList"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
 
