@@ -121,6 +121,7 @@ public class Debito implements Serializable {
 
     public static Debito CreateInstace(String msg)
     {
+        //avalro
         String data = "";
         String valorString = "";
         String estabelecimento = "";
