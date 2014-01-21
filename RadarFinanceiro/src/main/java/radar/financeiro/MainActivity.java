@@ -37,7 +37,7 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
      */
     private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
     private ContentResolver contentResolver;
-    private static ListarGastos listarGastos;
+    public static ListarGastos listarGastos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,7 +147,9 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
          * fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
-
+        private static ArrayAdapter adlistview;
+        private static List<DebitoAcumulado> debitos;
+        private static Periodicidade periodicidade;
         /**
          * Returns a new instance of this fragment for the given section
          * number.
@@ -163,12 +165,26 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
         public PlaceholderFragment() {
         }
 
+        public static void carregarDebitos()
+        {
+            if (debitos != null)
+                debitos.clear();
+
+            debitos = listarGastos.RecuperarGastosAgrupadosPorPeriodicade(periodicidade);
+        }
+
+        public static void recarregarDebitos()
+        {
+            carregarDebitos();
+            adlistview.notifyDataSetChanged();
+        }
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-            Periodicidade periodicidade = Periodicidade.values()[getArguments().getInt(ARG_SECTION_NUMBER) - 1];
+            periodicidade = Periodicidade.values()[getArguments().getInt(ARG_SECTION_NUMBER) - 1];
 
             if (Periodicidade.Periodo == periodicidade) {
                 Date dataInicio = new Date(2013, 9, 1);
@@ -179,10 +195,10 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
                 ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
                 smsListView.setAdapter(new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, smsList));
             } else {
-                List<DebitoAcumulado> debitos = listarGastos.RecuperarGastosAgrupadosPorPeriodicade(periodicidade);
-                ArrayAdapter ad = new CustomAdapter_debitos(rootView.getContext(), R.layout.list_item, debitos);
+                carregarDebitos();
+                adlistview = new CustomAdapter_debitos(rootView.getContext(), R.layout.list_item, debitos);
                 ListView smsListView = (ListView) rootView.findViewById(R.id.SMSList);
-                smsListView.setAdapter(ad);
+                smsListView.setAdapter(adlistview);
                 smsListView.setOnItemClickListener(new DrawerItemClickListener());
             }
 

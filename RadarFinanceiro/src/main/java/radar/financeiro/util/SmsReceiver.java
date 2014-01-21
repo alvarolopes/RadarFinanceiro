@@ -10,6 +10,10 @@ import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
 
+import radar.financeiro.Debitos_Detalhes;
+import radar.financeiro.MainActivity;
+import radar.financeiro.Model.Debito;
+
 public class SmsReceiver extends BroadcastReceiver {
     // All available column names in SMS table
     // [_id, thread_id, address, 
@@ -44,7 +48,8 @@ public class SmsReceiver extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
         // Get SMS map from Intent
-        /*Bundle extras = intent.getExtras();
+
+        Bundle extras = intent.getExtras();
 
         String messages = "";
 
@@ -53,50 +58,34 @@ public class SmsReceiver extends BroadcastReceiver {
             Object[] smsExtra = (Object[]) extras.get(SMS_EXTRA_NAME);
 
             // Get ContentResolver object for pushing encrypted SMS to incoming folder
-            ContentResolver contentResolver = context.getContentResolver();
+            DatabaseHelper db = new DatabaseHelper(context);
 
             for (int i = 0; i < smsExtra.length; ++i) {
                 SmsMessage sms = SmsMessage.createFromPdu((byte[]) smsExtra[i]);
 
-                String body = sms.getMessageBody().toString();
+                String msg = sms.getMessageBody().toString();
                 String address = sms.getOriginatingAddress();
+                if (address.equals("27181"))
+                {
+                    Debito debito = Debito.CreateInstace(msg);
 
-                messages += "SMS from " + address + " :\n";
-                messages += body + "\n";
+                    if (debito != null)
+                    {
+                        db.createDebito(debito);
 
-                // Here you can add any your code to work with incoming SMS
-                // I added encrypting of all received SMS 
-
-                putSmsToDatabase(contentResolver, sms);
+                        MainActivity.PlaceholderFragment.recarregarDebitos();
+                    }
+                }
             }
 
             // Display SMS message
             Toast.makeText(context, messages, Toast.LENGTH_SHORT).show();
-        }*/
+        }
 
         // WARNING!!! 
         // If you uncomment next line then received SMS will not be put to incoming.
         // Be careful!
         // this.abortBroadcast();
     }
-
-    private void putSmsToDatabase(ContentResolver contentResolver, SmsMessage sms) {
-        // Create SMS row
-        ContentValues values = new ContentValues();
-        values.put(ADDRESS, sms.getOriginatingAddress());
-        values.put(DATE, sms.getTimestampMillis());
-        values.put(READ, MESSAGE_IS_NOT_READ);
-        values.put(STATUS, sms.getStatus());
-        values.put(TYPE, MESSAGE_TYPE_INBOX);
-        values.put(SEEN, MESSAGE_IS_NOT_SEEN);
-        try {
-            String encryptedPassword = StringCryptor.encrypt(new String(PASSWORD), sms.getMessageBody().toString());
-            values.put(BODY, encryptedPassword);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        // Push row into the SMS table
-        contentResolver.insert(Uri.parse(SMS_URI), values);
-    }
 }
+

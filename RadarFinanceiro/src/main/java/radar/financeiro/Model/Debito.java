@@ -118,4 +118,32 @@ public class Debito implements Serializable {
 
         }
     }
+
+    public static Debito CreateInstace(String msg)
+    {
+        String data = "";
+        String valorString = "";
+        String estabelecimento = "";
+        Debito debito = null;
+
+        if (msg.contains("Transacao")) {
+            data = msg.substring(msg.indexOf(" em ") + 4, msg.indexOf(" as ") + 9);
+            estabelecimento = msg.substring(msg.indexOf(data) + data.length(), msg.length()).trim();
+            data = data.replace(" as ", " ");
+            valorString = msg.substring(msg.indexOf("R$"), msg.indexOf("aprovada"));
+            debito = new Debito(data, valorString, estabelecimento);
+            debito.setCodigo(msg.hashCode());
+        } else {
+            if (msg.contains("Saque")) {
+                data = msg.substring(msg.indexOf(" efetuado em ") + 13, msg.indexOf(" as ") + 9);
+                data = data.replace(" as ", " ");
+                estabelecimento = "Saque";
+                valorString = msg.substring(msg.indexOf("R$"), msg.length());
+                debito = new Debito(data, valorString, estabelecimento);
+                debito.setCodigo(msg.hashCode());
+            }
+        }
+
+        return debito;
+    }
 }

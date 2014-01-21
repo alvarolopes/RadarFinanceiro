@@ -67,10 +67,20 @@ public class Debitos_Detalhes extends Activity {
      */
     public static class PlaceholderFragment extends Fragment {
 
-        private DebitoAcumulado debitoAcumulado;
+        private static DebitoAcumulado debitoAcumulado;
+        private static ArrayAdapter ad;
+        private static List<Debito> debitos;
 
         public PlaceholderFragment(DebitoAcumulado _debitoAcumulado) {
             debitoAcumulado = _debitoAcumulado;
+        }
+
+        public static void carregarDebitos()
+        {
+            if (debitos != null)
+                debitos.clear();
+
+            debitos = debitoAcumulado.desbitosNoPerido;
         }
 
         @Override
@@ -84,9 +94,8 @@ public class Debitos_Detalhes extends Activity {
             data.setText(debitoAcumulado.getDataView());
             valor.setText(debitoAcumulado.getValorView());
 
-
-            List<Debito> debitos = debitoAcumulado.desbitosNoPerido;
-            ArrayAdapter ad = new CustomAdapter_debitosDetalhados(rootView.getContext(), R.layout.list_item_detalhe, debitos);
+            carregarDebitos();
+            ad = new CustomAdapter_debitosDetalhados(rootView.getContext(), R.layout.list_item_detalhe, debitos);
             ListView smsListView = (ListView) rootView.findViewById(R.id.listDebitos);
 
             smsListView.setAdapter(ad);
