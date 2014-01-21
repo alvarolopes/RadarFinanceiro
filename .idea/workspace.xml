@@ -16,10 +16,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2453db77-3d56-4a8b-85c8-b5e9ea8b5fc5" name="Default" comment="no message&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Debitos_Detalhes.java" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Debitos_Detalhes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/ListarGastos.java" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/ListarGastos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/SmsReceiver.java" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/SmsReceiver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Radar Financeiro.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -239,7 +236,7 @@
       <file leaf-file-name="Debito.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="16" selection-start="3147" selection-end="3151" vertical-scroll-proportion="0.4258373" vertical-offset="1428" max-vertical-offset="2055">
+            <state line="123" column="10" selection-start="2792" selection-end="2792" vertical-scroll-proportion="0.23444976" vertical-offset="1428" max-vertical-offset="2070">
               <folding />
             </state>
           </provider>
@@ -1034,11 +1031,11 @@
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/SMSApp.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/DebitosDbHelper.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/DatabaseHelper.java" />
-        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/ListarGastos.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Debitos_Detalhes.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/SmsReceiver.java" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java" />
       </list>
     </option>
   </component>
@@ -2117,7 +2114,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="16" selection-start="3147" selection-end="3151" vertical-scroll-proportion="0.4258373" vertical-offset="1428" max-vertical-offset="2055">
+        <state line="123" column="10" selection-start="2792" selection-end="2792" vertical-scroll-proportion="0.23444976" vertical-offset="1428" max-vertical-offset="2070">
           <folding />
         </state>
       </provider>
