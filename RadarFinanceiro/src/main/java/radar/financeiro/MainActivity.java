@@ -19,6 +19,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.mycompany.myapp.adicionarDebito;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -121,11 +123,22 @@ public class MainActivity extends Activity implements ActionBar.OnNavigationList
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_new:
+                adicionarNovoDebito();
+                return true;
+            
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+    }
+
+    private void adicionarNovoDebito() {
+
+        Intent i = new Intent(this.getApplicationContext(), adicionarDebito.class);
+        startActivity(i);
+
     }
 
     @Override

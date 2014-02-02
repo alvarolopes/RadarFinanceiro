@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -121,11 +122,13 @@ public class Debito implements Serializable {
 
     public static Debito CreateInstace(String msg)
     {
-        //avalro
         String data = "";
         String valorString = "";
         String estabelecimento = "";
         Debito debito = null;
+
+        ArrayList<Template> templates = recuperarTemplates();
+
 
         if (msg.contains("Transacao")) {
             data = msg.substring(msg.indexOf(" em ") + 4, msg.indexOf(" as ") + 9);
@@ -146,5 +149,17 @@ public class Debito implements Serializable {
         }
 
         return debito;
+    }
+
+    private static ArrayList<Template> recuperarTemplates() {
+        Template template1 = new Template();
+        template1.setNumero("27181");
+        template1.setIdentificador(new Substring(0,75));
+        template1.setValor(new Substring(3,2));
+
+        ArrayList<Template> lala = new ArrayList<Template>();
+        lala.add(template1);
+
+        return lala;
     }
 }

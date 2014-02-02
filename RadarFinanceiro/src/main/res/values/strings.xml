@@ -12,5 +12,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_debitos__detalhes">Detalhes do periodo</string>
     <string name="hello_world">Hello world!</string>
+    <string name="adicionar">Adicionar Debito</string>
+    <string name="title_activity_adicionar_debito">Adicionar Debito</string>
 
 </resources>

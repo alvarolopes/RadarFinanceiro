@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import radar.financeiro.R;
+
 public class adicionarDebito extends Activity {
 
     @Override

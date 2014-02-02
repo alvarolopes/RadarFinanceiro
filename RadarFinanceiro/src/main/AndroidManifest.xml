@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="radar.financeiro"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -16,11 +16,11 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name="radar.financeiro.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,15 +30,19 @@
 
         <receiver
             android:name="radar.financeiro.util.SmsReceiver"
-            android:exported="true">
-            <intent-filter android:priority="1000">
+            android:exported="true" >
+            <intent-filter android:priority="1000" >
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 
         <activity
             android:name="radar.financeiro.Debitos_Detalhes"
-            android:label="@string/title_activity_debitos__detalhes"></activity>
+            android:label="@string/title_activity_debitos__detalhes" />
+        <activity
+            android:name="com.mycompany.myapp.adicionarDebito"
+            android:label="@string/title_activity_adicionar_debito" >
+        </activity>
     </application>
 
 </manifest>

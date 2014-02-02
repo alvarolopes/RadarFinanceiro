@@ -15,7 +15,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2453db77-3d56-4a8b-85c8-b5e9ea8b5fc5" name="Default" comment="no message&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/drawable-hdpi/ic_action_new.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/drawable-mdpi/ic_action_new.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/drawable-xhdpi/ic_action_new.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/drawable-xxhdpi/ic_action_new.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Substring.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Template.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/activity_adicionar_debito.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/com/mycompany/myapp/adicionarDebito.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/adicionar_debito.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/fragment_adicionar_debito.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/main.xml" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Radar Financeiro.iws" />
@@ -72,7 +86,7 @@
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" line="214" class="radar.financeiro.MainActivity.PlaceholderFragment.DrawerItemClickListener" package="radar.financeiro">
+      <breakpoint url="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" line="227" class="radar.financeiro.MainActivity.PlaceholderFragment.DrawerItemClickListener" package="radar.financeiro">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -160,84 +174,106 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="39" selection-start="5475" selection-end="5673" vertical-scroll-proportion="-7.576923" vertical-offset="2173" max-vertical-offset="3435">
+            <state line="127" column="21" selection-start="4494" selection-end="4494" vertical-scroll-proportion="-7.5384617" vertical-offset="1709" max-vertical-offset="3630">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2058#2092#0" expanded="true" />
-                <element signature="e#2126#2160#0" expanded="true" />
-                <element signature="e#2194#2228#0" expanded="true" />
-                <element signature="e#2262#2296#0" expanded="true" />
+                <element signature="e#2103#2137#0" expanded="true" />
+                <element signature="e#2171#2205#0" expanded="true" />
+                <element signature="e#2239#2273#0" expanded="true" />
+                <element signature="e#2307#2341#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DebitoAcumulado.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/DebitoAcumulado.java">
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/main.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="46" selection-start="319" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1080">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Activity.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///adt-bundle-mac-x86_64-20130917/sdk/platforms/android-18/android.jar!/android/app/Activity.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="16" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="6645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SmsReceiver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/SmsReceiver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="56" selection-start="2548" selection-end="2561" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1455">
+            <state line="4" column="33" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#303#322#0" expanded="true" />
+                <element signature="e#474#499#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseHelper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/DatabaseHelper.java">
+      <file leaf-file-name="adicionar_debito.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/adicionar_debito.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="125" column="0" selection-start="3684" selection-end="3684" vertical-scroll-proportion="0.0" vertical-offset="1045" max-vertical-offset="2580">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3733#3741#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ListarGastos.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/ListarGastos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="0" selection-start="4283" selection-end="4383" vertical-scroll-proportion="0.0" vertical-offset="1008" max-vertical-offset="1635">
-              <folding>
-                <element signature="method#RecuperarGastosAgrupadosPorPeriodo#0;class#ListarGastos#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Debitos_Detalhes.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Debitos_Detalhes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="0" selection-start="2396" selection-end="2396" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1455">
+            <state line="2" column="55" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Debito.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java">
+      <file leaf-file-name="activity_adicionar_debito.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/activity_adicionar_debito.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="10" selection-start="2792" selection-end="2792" vertical-scroll-proportion="0.23444976" vertical-offset="1428" max-vertical-offset="2070">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="195">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="58" selection-start="773" selection-end="773" vertical-scroll-proportion="0.3634895" vertical-offset="0" max-vertical-offset="619">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_adicionar_debito.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/fragment_adicionar_debito.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="1307" selection-end="1307" vertical-scroll-proportion="-12.481482" vertical-offset="128" max-vertical-offset="720">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="41" selection-start="46" selection-end="54" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values-v11/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="60" selection-start="583" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dimens.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values-w820dp/dimens.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="17" selection-start="1409" selection-end="1417" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="810">
+              <folding>
+                <element signature="e#1505#1547#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1022,7 +1058,6 @@
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/DebitoAcumulado.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/debitos__detalhes.xml" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/activity_debitos__detalhes.xml" />
-        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Debitos.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/CustomAdapter_debitos.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/CustomAdapter_debitosDetalhados.java" />
@@ -1032,10 +1067,18 @@
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/DebitosDbHelper.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/DatabaseHelper.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/ListarGastos.java" />
-        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Debitos_Detalhes.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/util/SmsReceiver.java" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Template.java" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Substring.java" />
         <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/main_activity_actions.xml" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/com/mycompany/myapp/adicionarDebito.java" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/main.xml" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/adicionar_debito.xml" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/fragment_adicionar_debito.xml" />
       </list>
     </option>
   </component>
@@ -1485,6 +1528,10 @@
       <recent name="radar.financeiro" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/RadarFinanceiro/src/main/res/drawable-xxhdpi" />
+      <recent name="$PROJECT_DIR$/RadarFinanceiro/src/main/res/drawable-xhdpi" />
+      <recent name="$PROJECT_DIR$/RadarFinanceiro/src/main/res/drawable-mdpi" />
+      <recent name="$PROJECT_DIR$/RadarFinanceiro/src/main/res/drawable-hdpi" />
       <recent name="$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
@@ -1692,13 +1739,14 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25535715" sideWeight="0.49914822" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32958034" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958034" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39815763" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285568" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33776867" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33776867" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1709,7 +1757,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1763,43 +1810,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///adt-bundle-mac-x86_64-20130917/sdk/platforms/android-18/android.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="22" selection-start="3690" selection-end="3690" vertical-scroll-proportion="0.0" vertical-offset="1314" max-vertical-offset="2775" />
-      </provider>
-    </entry>
-    <entry file="jar:///adt-bundle-mac-x86_64-20130917/sdk/platforms/android-18/android.jar!/android/os/Bundle.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="15" selection-start="5145" selection-end="5145" vertical-scroll-proportion="0.0" vertical-offset="1569" max-vertical-offset="2910" />
-      </provider>
-    </entry>
-    <entry file="jar:///adt-bundle-mac-x86_64-20130917/sdk/platforms/android-18/android.jar!/android/widget/Toast.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="157" selection-end="157" vertical-scroll-proportion="0.12214984" vertical-offset="0" max-vertical-offset="750" />
-      </provider>
-    </entry>
-    <entry file="jar:///adt-bundle-mac-x86_64-20130917/sdk/platforms/android-18/android.jar!/java/lang/reflect/InvocationTargetException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="11" selection-start="294" selection-end="294" vertical-scroll-proportion="0.21466905" vertical-offset="0" max-vertical-offset="559" />
-      </provider>
-    </entry>
-    <entry file="jar:///adt-bundle-mac-x86_64-20130917/sdk/platforms/android-18/android.jar!/java/lang/ClassLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="30" selection-start="2418" selection-end="2418" vertical-scroll-proportion="0.0" vertical-offset="478" max-vertical-offset="1155" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Periodicidade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="55" selection-start="88" selection-end="88" vertical-scroll-proportion="0.053667262" vertical-offset="0" max-vertical-offset="559">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///adt-bundle-mac-x86_64-20130917/sdk/platforms/android-18/android.jar!/java/lang/StringBuilder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="303" selection-end="303" vertical-scroll-proportion="0.16100179" vertical-offset="0" max-vertical-offset="1215" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="68" selection-start="221" selection-end="221" vertical-scroll-proportion="0.12776831" vertical-offset="0" max-vertical-offset="587" />
@@ -1862,87 +1872,9 @@
         <state line="17" column="16" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="1245" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <folding>
-            <element signature="e#242#267#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///adt-bundle-mac-x86_64-20130917/sdk/platforms/android-18/android.jar!/android/app/Instrumentation.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="112" column="16" selection-start="5963" selection-end="5963" vertical-scroll-proportion="0.0" vertical-offset="1493" max-vertical-offset="2400" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="41" selection-start="46" selection-end="54" vertical-scroll-proportion="0.051107325" vertical-offset="0" max-vertical-offset="587">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="16" selection-start="215" selection-end="215" vertical-scroll-proportion="0.12776831" vertical-offset="0" max-vertical-offset="587">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="71" selection-start="597" selection-end="597" vertical-scroll-proportion="0.30664396" vertical-offset="0" max-vertical-offset="587">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values-w820dp/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="627">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values-v11/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="60" selection-start="583" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="323" selection-end="323" vertical-scroll-proportion="-3.8888888" vertical-offset="0" max-vertical-offset="195">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/fragment_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="281" selection-end="412" vertical-scroll-proportion="-4.4444447" vertical-offset="0" max-vertical-offset="285">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/attrs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="627">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/list_item.xml">
@@ -1958,16 +1890,6 @@
     <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/CustomAdapter_debitos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="5" selection-start="1548" selection-end="1548" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/activity_debitos__detalhes.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
           <folding />
         </state>
       </provider>
@@ -1995,13 +1917,6 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="31" selection-start="2140" selection-end="2140" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="38" selection-start="1301" selection-end="1341" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="750">
           <folding />
         </state>
       </provider>
@@ -2064,19 +1979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="39" selection-start="5475" selection-end="5673" vertical-scroll-proportion="-7.576923" vertical-offset="2173" max-vertical-offset="3435">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2058#2092#0" expanded="true" />
-            <element signature="e#2126#2160#0" expanded="true" />
-            <element signature="e#2194#2228#0" expanded="true" />
-            <element signature="e#2262#2296#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Debitos_Detalhes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="0" selection-start="2396" selection-end="2396" vertical-scroll-proportion="0.0" vertical-offset="795" max-vertical-offset="1455">
@@ -2112,9 +2014,210 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Template.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="31" selection-start="129" selection-end="129" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <folding>
+            <element signature="e#157#158#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#833#834#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
+            <element signature="e#943#944#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Periodicidade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="53" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Substring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="43" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+          <folding>
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#260#261#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#389#390#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/Model/Debito.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="10" selection-start="2792" selection-end="2792" vertical-scroll-proportion="0.23444976" vertical-offset="1428" max-vertical-offset="2070">
+        <state line="158" column="0" selection-start="4228" selection-end="4228" vertical-scroll-proportion="0.0" vertical-offset="1578" max-vertical-offset="2280">
+          <folding>
+            <element signature="e#4277#4287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="323" selection-end="323" vertical-scroll-proportion="-3.8888888" vertical-offset="0" max-vertical-offset="195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/fragment_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="45" selection-start="120" selection-end="120" vertical-scroll-proportion="-0.5555556" vertical-offset="0" max-vertical-offset="285">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/attrs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="627">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="587">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values-v11/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="60" selection-start="583" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values-w820dp/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="627">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/activity_debitos__detalhes.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.1" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="12" selection-start="211" selection-end="211" vertical-scroll-proportion="0.119617224" vertical-offset="0" max-vertical-offset="627">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="41" selection-start="46" selection-end="54" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/com/mycompany/myapp/adicionarDebito.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="25" selection-start="691" selection-end="691" vertical-scroll-proportion="0.24232633" vertical-offset="45" max-vertical-offset="930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/java/radar/financeiro/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="21" selection-start="4494" selection-end="4494" vertical-scroll-proportion="-7.5384617" vertical-offset="1709" max-vertical-offset="3630">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2103#2137#0" expanded="true" />
+            <element signature="e#2171#2205#0" expanded="true" />
+            <element signature="e#2239#2273#0" expanded="true" />
+            <element signature="e#2307#2341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="33" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <folding>
+            <element signature="e#303#322#0" expanded="true" />
+            <element signature="e#474#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/menu/adicionar_debito.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="55" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/activity_adicionar_debito.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="592">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/layout/fragment_adicionar_debito.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="1307" selection-end="1307" vertical-scroll-proportion="-12.481482" vertical-offset="128" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="17" selection-start="1409" selection-end="1417" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="810">
+          <folding>
+            <element signature="e#1505#1547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RadarFinanceiro/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="58" selection-start="773" selection-end="773" vertical-scroll-proportion="0.3634895" vertical-offset="0" max-vertical-offset="619">
           <folding />
         </state>
       </provider>
