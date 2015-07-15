@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Radar Financeiro.iml" filepath="$PROJECT_DIR$/Radar Financeiro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RadarFinanceiro/RadarFinanceiro.iml" filepath="$PROJECT_DIR$/RadarFinanceiro/RadarFinanceiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RadarFinanceiro.iml" filepath="$PROJECT_DIR$/RadarFinanceiro.iml" />
     </modules>
   </component>
 </project>
